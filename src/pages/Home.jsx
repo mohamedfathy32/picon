@@ -4,6 +4,8 @@ import WhyChooseUs from '../components/WhyChooseUs';
 import TestimonialSlider from '../components/TestimonialSlider';
 import CertificationSlider from '../components/CertificationSlider';
 import NewsletterSection from '../components/NewsletterSection';
+import CatalogDownload from '../components/CatalogDownload';
+import Statistics from '../components/Statistics';
 import { products } from '../data/products';
 
 const sliderImages = [
@@ -25,19 +27,33 @@ const sliderImages = [
     description: 'Delivered fresh to your doorstep',
     button: { text: 'Browse Products', href: '/products' },
   },
+  {
+    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80',
+    title: 'About Our Company',
+    description: 'Learn more about our story, mission, and values',
+    button: { text: 'Discover More', href: '/about' },
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80',
+    title: 'Contact Us',
+    description: 'Get in touch with our team for any inquiries',
+    button: { text: 'Contact Now', href: '/contact' },
+  }
 ];
 
 const featuredProducts = products.filter(product => product.featured);
 
 const Home = () => (
-  <div className="min-h-screen">
+  <main>
     <HeroSlider slides={sliderImages} />
     <FeaturedProducts products={featuredProducts} />
     <WhyChooseUs />
     <TestimonialSlider />
     <CertificationSlider />
     <NewsletterSection />
-  </div>
+    <CatalogDownload />
+    <Statistics />
+  </main>
 );
 
 export default Home; 

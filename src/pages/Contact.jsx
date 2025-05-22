@@ -34,8 +34,8 @@ const Contact = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-green-900/70 to-green-800/50" />
         </div>
         <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-5xl md:text-7xl font-serif mb-6 animate-fade-in">Contact Us</h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto animate-fade-in-delay">
+          <h1 className="text-5xl md:text-7xl font-serif mb-6 animate-fade-in text-white">Contact Us</h1>
+          <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto animate-fade-in-delay text-white">
             Get in touch with us for any inquiries
           </p>
         </div>
