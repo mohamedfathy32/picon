@@ -14,13 +14,13 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed w-full z-50 bg-white shadow-lg transition-all duration-300">
+    <nav className="fixed top-0 left-0 right-0 w-full z-50 bg-white shadow-lg transition-all duration-300">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between md:justify-between">
+        <div className="flex items-center justify-between md:justify-between h-[80px]">
           {/* Logo Centered on Mobile */}
           <div className="flex-1 flex justify-center md:justify-start">
-            <Link to="/" className="flex items-center">
-              <img src={logo} alt="PICON Logo" className="w-20 h-20 object-contain" style={{ minWidth: 80, minHeight: 80, maxWidth: 80, maxHeight: 80 }} />
+            <Link to="/" className="flex items-center ">
+              <img src={logo} alt="PICON Logo" className="w-[160px] object-contain" style={{ minWidth: 160, minHeight: 160, maxWidth: 160, maxHeight: 160 }} />
             </Link>
           </div>
           {/* Desktop Navigation */}
@@ -51,7 +51,7 @@ const Navbar = () => {
               className="p-2 rounded-md text-[#17936d]"
             >
               <svg
-                className="w-7 h-7"
+                className="w-10 h-10"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

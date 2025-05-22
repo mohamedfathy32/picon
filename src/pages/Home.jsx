@@ -47,12 +47,12 @@ const Home = () => (
   <main>
     <HeroSlider slides={sliderImages} />
     <FeaturedProducts products={featuredProducts} />
+    <Statistics />
     <WhyChooseUs />
     <TestimonialSlider />
     <CertificationSlider />
     <NewsletterSection />
     <CatalogDownload />
-    <Statistics />
   </main>
 );
 

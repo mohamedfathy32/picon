@@ -3,7 +3,7 @@ import { FaDownload } from 'react-icons/fa';
 const CatalogDownload = () => {
   const handleDownload = () => {
     // The PDF file will be added later
-    window.open('/catalog.pdf', '_blank');
+    window.open('/Catalog.pdf', '_blank');
   };
 
   return (
@@ -17,6 +17,7 @@ const CatalogDownload = () => {
                 src="https://media.istockphoto.com/id/2147579486/photo/your-parcels-are-here.webp?a=1&b=1&s=612x612&w=0&k=20&c=BygHDVn1jvSHMuHxO4Aq83cLhM4FbEL354xpU0TBHDg="
                 alt="Delivery person handing package"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
             </div>

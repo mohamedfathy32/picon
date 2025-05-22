@@ -14,7 +14,15 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif text-[#17936d];
+    @apply font-serif;
+  }
+
+  h1, h2 {
+    @apply text-[#e87c2a];
+  }
+
+  h3, h4, h5, h6 {
+    @apply text-[#17936d];
   }
 }
 
@@ -40,7 +48,7 @@
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-serif mb-10 text-center text-[#17936d];
+    @apply text-3xl md:text-4xl font-serif mb-10 text-center text-[#e87c2a];
   }
 
   .card {
@@ -53,5 +61,15 @@
 
   .label {
     @apply block text-sm font-medium text-[#17936d] mb-1;
+  }
+
+  /* New gradient text class */
+  .gradient-text {
+    @apply bg-gradient-to-r from-[#17936d] to-[#e87c2a] bg-clip-text text-transparent;
+  }
+
+  /* New gradient background class */
+  .gradient-bg {
+    @apply bg-gradient-to-r from-[#17936d] to-[#e87c2a];
   }
 }

@@ -31,6 +31,7 @@ const HeroSlider = ({ slides }) => {
                 src={slide.image}
                 alt={slide.title}
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-green-900/70 to-green-800/50" />
               <div className="absolute inset-0 flex items-center justify-center text-center text-white px-4">

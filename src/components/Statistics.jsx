@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { FaTruck, FaUsers, FaStore } from 'react-icons/fa';
 
 const Statistics = () => {
@@ -8,6 +8,9 @@ const Statistics = () => {
     brands: 0
   });
 
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const statsRef = useRef(null);
+
   const targetStats = {
     sales: 1000, // 1000 tons
     clients: 500, // 500 clients
@@ -15,6 +18,32 @@ const Statistics = () => {
   };
 
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            setHasAnimated(true);
+            startCounting();
+          }
+        });
+      },
+      {
+        threshold: 0.2 // Start animation when 20% of the element is visible
+      }
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => {
+      if (statsRef.current) {
+        observer.unobserve(statsRef.current);
+      }
+    };
+  }, [hasAnimated]);
+
+  const startCounting = () => {
     const duration = 2000; // 2 seconds
     const steps = 60;
     const stepDuration = duration / steps;
@@ -42,7 +71,7 @@ const Statistics = () => {
     ];
 
     return () => timers.forEach(timer => clearInterval(timer));
-  }, []);
+  };
 
   const statItems = [
     {
@@ -66,18 +95,27 @@ const Statistics = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white" ref={statsRef}>
       <div className="container mx-auto px-4">
+        {/* Title Section */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-serif text-[#e87c2a] mb-4">Our Achievements</h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            We take pride in our accomplishments and the trust we've built with our valued customers and partners.
+          </p>
+        </div>
+        
+        {/* Statistics Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {statItems.map((item, index) => (
             <div key={index} className="text-center p-6 rounded-lg hover:shadow-lg transition-shadow duration-300">
               <div className="flex justify-center mb-4">
                 {item.icon}
               </div>
-              <div className="text-4xl font-bold text-gray-800 mb-2">
+              <div className="text-4xl font-bold gradient-text mb-2">
                 {item.value}{item.suffix}
               </div>
-              <div className="text-lg text-gray-600">
+              <div className="text-lg text-[#17936d]">
                 {item.label}
               </div>
             </div>
