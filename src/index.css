@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-[#222] bg-[#e6f4ef];
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-[#17936d];
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-2 rounded-md font-semibold transition-colors duration-200 shadow-sm;
+  }
+
+  .btn-primary {
+    @apply bg-[#17936d] text-white hover:bg-[#127a57];
+  }
+
+  .btn-secondary {
+    @apply bg-[#e87c2a] text-white hover:bg-[#d96c1a];
+  }
+
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply py-16;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-serif mb-10 text-center text-[#17936d];
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300;
+  }
+
+  .input {
+    @apply w-full px-4 py-2 border border-[#17936d] rounded-md focus:ring-2 focus:ring-[#e87c2a] focus:border-transparent transition-all duration-200 bg-[#e6f4ef] text-[#222];
+  }
+
+  .label {
+    @apply block text-sm font-medium text-[#17936d] mb-1;
+  }
+}
